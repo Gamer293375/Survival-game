@@ -1,6 +1,8 @@
 {
     "activeFile": "",
     "expandedProjectPaths": [
+        "maps",
+        "."
     ],
     "file.lastUsedOpenFilter": "Все файлы (*)",
     "fileStates": {
@@ -137,6 +139,61 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Animation_Campfire.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Animation_Flowers_Red.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Animation_Flowers_White.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Atlas_Buildings.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Atlas_Props.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Atlas_Rocks.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Atlas_Trees_Bushes.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Objects_Buildings.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Objects_Props.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Objects_Rocks.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Objects_Shadows.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Objects_Trees.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tileset_Ground.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tileset_RockSlope.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tileset_RockSlope_Simple.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tileset_Shadow.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tileset_Water.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tilesets_Road.tsx": {
+            "scaleInDock": 1
+        },
         "assets/maps/Grass.tsx": {
             "dynamicWrapping": true,
             "scaleInDock": 1,
@@ -157,6 +214,71 @@
                 "x": 971.2121212121212,
                 "y": 1018.1818181818182
             }
+        },
+        "maps/Main.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 1262.121212121212,
+                "y": 2015.1515151515152
+            }
+        },
+        "maps/Main.tmx#Animation_Flowers_Red": {
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Animation_Flowers_White": {
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Atlas_Buildings": {
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Atlas_Props": {
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Atlas_Rocks": {
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Atlas_Trees_Bushes": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Buildings": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Campfire": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Objects_Props": {
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Objects_Rocks": {
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Objects_Shadows": {
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Objects_Trees": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Road": {
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Tileset_Ground": {
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Tileset_RockSlope": {
+            "scaleInDock": 1
+        },
+        "maps/Main.tmx#Tileset_RockSlope_Simple": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "maps/Main.tmx#Tileset_Shadow": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
         }
     },
     "map.height": 100,
@@ -168,6 +290,7 @@
     ],
     "project": "Survival.tiled-project",
     "recentFiles": [
+        "maps/Main.tmx",
         "maps/MAP.tmx",
         "C:/Users/Asus/Documents/Tiles.tsx",
         "C:/Users/Asus/AppData/Local/Temp/5fb318cf-6caf-40ea-bcbf-b7425039fc35_The_Fan-tasy_Tileset_Free_1_5_7.zip.c35/The Fan-tasy Tileset (Free)/Tiled/Tilemaps/Beginning Fields.tmx",
