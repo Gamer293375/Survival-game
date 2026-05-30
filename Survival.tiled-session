@@ -229,6 +229,9 @@
                 "y": 351
             }
         },
+        "assets/maps/Main.tmx#Animation_Flowers_Red": {
+            "dynamicWrapping": false
+        },
         "assets/maps/Main.tmx#Atlas_Trees_Bushes": {
             "dynamicWrapping": false
         },
@@ -237,6 +240,9 @@
         },
         "assets/maps/Main.tmx#Campfire": {
             "dynamicWrapping": false
+        },
+        "assets/maps/Main.tmx#Objects_Rocks": {
+            "dynamicWrapping": true
         },
         "assets/maps/Main.tmx#Objects_Trees": {
             "dynamicWrapping": true
