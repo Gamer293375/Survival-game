@@ -149,6 +149,14 @@
                 "x": 854,
                 "y": 1108
             }
+        },
+        "maps/MAP.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 971.2121212121212,
+                "y": 1018.1818181818182
+            }
         }
     },
     "map.height": 100,
@@ -160,6 +168,7 @@
     ],
     "project": "Survival.tiled-project",
     "recentFiles": [
+        "maps/MAP.tmx",
         "C:/Users/Asus/Documents/Tiles.tsx",
         "C:/Users/Asus/AppData/Local/Temp/5fb318cf-6caf-40ea-bcbf-b7425039fc35_The_Fan-tasy_Tileset_Free_1_5_7.zip.c35/The Fan-tasy Tileset (Free)/Tiled/Tilemaps/Beginning Fields.tmx",
         "C:/Users/Asus/AppData/Local/Temp/0059be7c-ba36-4b12-b4e4-3dfcd43f774b_The_Fan-tasy_Tileset_Free_1_5_7.zip.74b/The Fan-tasy Tileset (Free)/Tiled/Tilemaps/Beginning Fields.tmx",

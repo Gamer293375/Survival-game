@@ -1,5 +1,5 @@
 # This repository contains a game project in the Python programming language.
-1
+
 **The plot of the game:**
 
 Game Start.
