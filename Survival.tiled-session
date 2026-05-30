@@ -145,49 +145,72 @@
             }
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Animation_Campfire.tsx": {
-            "dynamicWrapping": false
+            "dynamicWrapping": false,
+            "scaleInDock": 1
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Animation_Flowers_Red.tsx": {
-            "dynamicWrapping": false
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Animation_Flowers_White.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Atlas_Buildings.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Atlas_Props.tsx": {
+            "scaleInDock": 1
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Atlas_Rocks.tsx": {
-            "dynamicWrapping": false
+            "dynamicWrapping": false,
+            "scaleInDock": 1
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Atlas_Trees_Bushes.tsx": {
-            "dynamicWrapping": false
+            "dynamicWrapping": false,
+            "scaleInDock": 1
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Objects_Buildings.tsx": {
-            "dynamicWrapping": true
+            "dynamicWrapping": true,
+            "scaleInDock": 0.5
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Objects_Props.tsx": {
-            "dynamicWrapping": true
+            "dynamicWrapping": true,
+            "scaleInDock": 1
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Objects_Rocks.tsx": {
-            "dynamicWrapping": true
+            "dynamicWrapping": true,
+            "scaleInDock": 1.5
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Objects_Shadows.tsx": {
-            "dynamicWrapping": true
+            "dynamicWrapping": true,
+            "scaleInDock": 1
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Objects_Trees.tsx": {
-            "dynamicWrapping": true
+            "dynamicWrapping": true,
+            "scaleInDock": 1
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tileset_Ground.tsx": {
-            "dynamicWrapping": false
+            "dynamicWrapping": false,
+            "scaleInDock": 1
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tileset_RockSlope.tsx": {
-            "dynamicWrapping": false
+            "dynamicWrapping": false,
+            "scaleInDock": 1
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tileset_RockSlope_Simple.tsx": {
-            "dynamicWrapping": false
+            "dynamicWrapping": false,
+            "scaleInDock": 1
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tileset_Shadow.tsx": {
-            "dynamicWrapping": false
+            "dynamicWrapping": false,
+            "scaleInDock": 1
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tileset_Water.tsx": {
             "dynamicWrapping": false
         },
         "C:/Users/Asus/Desktop/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tilesets_Road.tsx": {
-            "dynamicWrapping": false
+            "dynamicWrapping": false,
+            "scaleInDock": 2
         },
         "C:/Users/Asus/Documents/Tiles.tsx": {
             "scaleInDock": 1,
@@ -205,6 +228,18 @@
                 "x": 854,
                 "y": 351
             }
+        },
+        "assets/maps/Main.tmx#Atlas_Trees_Bushes": {
+            "dynamicWrapping": false
+        },
+        "assets/maps/Main.tmx#Buildings": {
+            "dynamicWrapping": true
+        },
+        "assets/maps/Main.tmx#Campfire": {
+            "dynamicWrapping": false
+        },
+        "assets/maps/Main.tmx#Objects_Trees": {
+            "dynamicWrapping": true
         }
     },
     "last.externalTilesetPath": "C:/Users/Asus/AppData/Local/Temp",
