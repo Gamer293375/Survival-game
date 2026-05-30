@@ -1,5 +1,5 @@
 {
-    "activeFile": "",
+    "activeFile": "maps/Main.tmx",
     "expandedProjectPaths": [
         "maps",
         "."
@@ -7,6 +7,10 @@
     "file.lastUsedOpenFilter": "Все файлы (*)",
     "fileStates": {
         "": {
+            "scaleInDock": 1
+        },
+        ":/automap-tiles.tsx": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "C:/Users/Asus/AppData/Local/Temp/0059be7c-ba36-4b12-b4e4-3dfcd43f774b_The_Fan-tasy_Tileset_Free_1_5_7.zip.74b/The Fan-tasy Tileset (Free)/Tiled/Tilemaps/Beginning Fields.tmx": {
@@ -194,6 +198,9 @@
         "D:/Progects/The_Fan-tasy_Tileset_Free_1_5_7/The Fan-tasy Tileset (Free)/Tiled/Tilesets/Tilesets_Road.tsx": {
             "scaleInDock": 1
         },
+        "Tileset/Tiled/Tilesets/Tileset_Water.tsx": {
+            "scaleInDock": 1
+        },
         "assets/maps/Grass.tsx": {
             "dynamicWrapping": true,
             "scaleInDock": 1,
@@ -216,11 +223,11 @@
             }
         },
         "maps/Main.tmx": {
-            "scale": 0.33,
-            "selectedLayer": 2,
+            "scale": 0.75,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 1262.121212121212,
-                "y": 2015.1515151515152
+                "x": 1336.6666666666665,
+                "y": 1543.3333333333333
             }
         },
         "maps/Main.tmx#Animation_Flowers_Red": {
@@ -240,7 +247,8 @@
         },
         "maps/Main.tmx#Atlas_Trees_Bushes": {
             "dynamicWrapping": false,
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "maps/Main.tmx#Buildings": {
             "dynamicWrapping": true,
@@ -251,6 +259,7 @@
             "scaleInDock": 1
         },
         "maps/Main.tmx#Objects_Props": {
+            "dynamicWrapping": true,
             "scaleInDock": 1
         },
         "maps/Main.tmx#Objects_Rocks": {
@@ -287,6 +296,7 @@
     "map.tileWidth": 16,
     "map.width": 100,
     "openFiles": [
+        "maps/Main.tmx"
     ],
     "project": "Survival.tiled-project",
     "recentFiles": [
