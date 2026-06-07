@@ -14,7 +14,7 @@ The island consists of three parts. The first is the beach, made up of sand, roc
 
 *Player:*
 
-Health consists of two bars: the first is the food bar (initially 5) and the second is the air bar, needed if the player finds himself in water (initially 5). To survive, you need to fight forest animals, obtain their meat, and draw water from the well (колодец).
+Health consists of three bars: the first is the food bar (initially 5), the second bar is the water bar (initially 5) and the third is the air bar, needed if the player finds himself in water (initially 5). To survive, you need to fight forest animals, obtain their meat, and draw water from the well (колодец).
 
 Equipment (opens in a separate tab) has initially a sword. The sword is needed to fight enemies. To complete the game, you need to collect a hammer, a saw, and three map pieces (all of which can be obtained from NPC players). Food and water reserves are also shown here.
 
