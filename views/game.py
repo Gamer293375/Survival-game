@@ -1,5 +1,7 @@
 import arcade
 
+from .person.player import Player
+
 from config import (
     PLAYER_SPEED,
     TILE_SCALE,
@@ -58,14 +60,7 @@ class GameView(arcade.View):
 
         self.player_list = arcade.SpriteList()
 
-        self.player = arcade.SpriteSolidColor(
-            width=16,
-            height=16,
-            color=arcade.color.BLUE,
-        )
-
-        self.player.center_x = 200
-        self.player.center_y = 500
+        self.player = Player(200, 500, PLAYER_SPEED)
 
         self.player_list.append(self.player)
 
@@ -134,18 +129,12 @@ class GameView(arcade.View):
         self.update_animated_layers(delta_time)
 
     def update_player_movement(self):
-        self.player.change_x = 0
-        self.player.change_y = 0
-
-        if self.left_pressed:
-            self.player.change_x = -PLAYER_SPEED
-        elif self.right_pressed:
-            self.player.change_x = PLAYER_SPEED
-
-        if self.up_pressed:
-            self.player.change_y = PLAYER_SPEED
-        elif self.down_pressed:
-            self.player.change_y = -PLAYER_SPEED
+        self.player.move(
+            self.left_pressed,
+            self.right_pressed,
+            self.up_pressed,
+            self.down_pressed
+        )
 
     def update_camera(self):
         self.camera.position = self.player.position
