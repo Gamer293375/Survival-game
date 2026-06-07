@@ -1,5 +1,5 @@
 {
-    "activeFile": "maps/Main.tmx",
+    "activeFile": "",
     "expandedProjectPaths": [
         "maps",
         "."
@@ -224,10 +224,10 @@
         },
         "maps/Main.tmx": {
             "scale": 0.75,
-            "selectedLayer": 0,
+            "selectedLayer": 9,
             "viewCenter": {
-                "x": 1336.6666666666665,
-                "y": 1543.3333333333333
+                "x": 1311.3333333333333,
+                "y": 2278.6666666666665
             }
         },
         "maps/Main.tmx#Animation_Flowers_Red": {
