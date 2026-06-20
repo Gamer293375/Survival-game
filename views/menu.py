@@ -264,7 +264,7 @@ class MenuView(arcade.View):
             "WASD / Arrows - move",
             "E - interact with NPC / well",
             "SPACE - attack",
-            "TAB - inventory",
+            "TAB - equipment",
             "M - map",
             "B - build boat",
         ]

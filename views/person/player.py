@@ -49,24 +49,37 @@ class Player:
             self.sprite.change_y = -self.speed
 
     def update_food_and_water(self, delta_time):
-        if self.food_and_water_timer == 10:
+        self.food_and_water_timer += delta_time
+        if self.food_and_water_timer >= 30:
             self.food_health -= 1
             self.water_health -= 1
-        self.chack_game_over()
+            self.food_and_water_timer = 0
+            self.check_game_over()
 
-    def update_air(self, delta_time):
-        if self.air_timer == 10:
+    def update_air(self, delta_time): #under water
+        self.air_timer += delta_time
+        if self.air_timer >= 20:
             self.air_health -= 1
-        self.chack_game_over()
+            self.air_timer = 0
+            self.check_game_over()
 
     def eat(self):
-        if self.food_health < self.max_health:
-            self.food_health += 1
+        if self.equipment["food"] == 0:
+            return "You don't have any food"
+        if self.food_health == self.max_health:
+            return "Your food bar is already full"
+        self.food_health += 1
+        self.equipment["food"] -= 1
+        return None
 
     def drink(self):
-        if self.water_health < self.max_health:
-            self.water_health += 1
+        if self.equipment["water"] == 0:
+            return "You don't have any water"
+        if self.water_health == self.max_health:
+            return "Your water bar is already full"
+        self.water_health += 1
+        self.equipment["water"] -= 1
 
-    def chack_game_over(self):
+    def check_game_over(self):
         if self.water_health == 0 or self.food_health == 0 or self.air_health == 0:
             pass

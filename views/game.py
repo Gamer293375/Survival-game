@@ -1,5 +1,7 @@
 import arcade
 
+import emoji 
+
 from .person.player import Player
 
 from config import (
@@ -25,6 +27,8 @@ class GameView(arcade.View):
 
         self.camera = None
         self.gui_camera = None
+
+        self.equipment_pressed = False
 
         self.left_pressed = False
         self.right_pressed = False
@@ -62,12 +66,12 @@ class GameView(arcade.View):
 
         self.player = Player(200, 500, PLAYER_SPEED)
 
-        self.player_list.append(self.player)
+        self.player_list.append(self.player.sprite)
 
         self.wall_list = self.create_wall_list()
 
         self.physics_engine = arcade.PhysicsEngineSimple(
-            self.player,
+            self.player.sprite,
             self.wall_list,
         )
 
@@ -105,9 +109,84 @@ class GameView(arcade.View):
             "WASD / arrows - move",
             20,
             20,
-            arcade.color.WHITE,
+            arcade.color.BLACK,
             16,
         )
+
+        arcade.draw_text(
+            f"Food: {emoji.emojize(':red_apple:') * self.player.food_health}",
+            20,
+            50,
+            arcade.color.RED,
+            15
+        )
+
+        arcade.draw_text(
+            f"Water: {emoji.emojize(':droplet:') * self.player.water_health}",
+            20,
+            80,
+            arcade.color.BLUE,
+            15
+        )
+
+        arcade.draw_text(
+            f"Air: {emoji.emojize(':bubbles:') * self.player.air_health}",
+            20,
+            110,
+            arcade.color.WHITE,
+            15
+        )        
+
+        if self.equipment_pressed:
+            self.draw_equipment_panel()
+
+    def draw_equipment_panel(self):
+        panel_width = 350
+        panel_height = 350
+
+        center_x = self.window.width / 2
+        center_y = self.window.height / 2
+
+        arcade.draw_rect_filled(
+            arcade.rect.XYWH(
+                center_x,
+                center_y,
+                panel_width,
+                panel_height,
+            ),
+            arcade.color.WHITE,
+        )
+
+        arcade.draw_rect_outline(
+            arcade.rect.XYWH(
+                center_x,
+                center_y,
+                panel_width,
+                panel_height,
+            ),
+            arcade.color.BLACK,
+            3,
+        )
+
+        arcade.draw_text(
+            "EQUIPMENT",
+            center_x,
+            center_y + 75,
+            arcade.color.BLACK,
+            20,
+            anchor_x="center",
+        )
+
+        start_y = center_y + 35
+
+        for index, text in enumerate(self.player.equipment):
+            arcade.draw_text(
+                f"{text}: {self.player.equipment[text]}",
+                center_x - 170,
+                start_y - index * 27,
+                arcade.color.BLACK,
+                14,
+            )
 
     def on_draw(self):
         self.clear()
@@ -137,7 +216,7 @@ class GameView(arcade.View):
         )
 
     def update_camera(self):
-        self.camera.position = self.player.position
+        self.camera.position = self.player.sprite.position
 
     def update_animated_layers(self, delta_time):
         animated_layers = [
@@ -161,6 +240,9 @@ class GameView(arcade.View):
 
         elif symbol == arcade.key.S or symbol == arcade.key.DOWN:
             self.down_pressed = True
+
+        if symbol == arcade.key.TAB:
+            self.equipment_pressed = not self.equipment_pressed
 
     def on_key_release(self, symbol, modifiers):
         if symbol == arcade.key.A or symbol == arcade.key.LEFT:
