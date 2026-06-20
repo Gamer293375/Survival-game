@@ -1,5 +1,4 @@
-import emoji
+import random
 
-print(emoji.emojize(":poultry_leg:"))
-print(emoji.emojize(":droplet:"))
-print(emoji.emojize(":bubbles:"))
+
+print(random.random() * 100 < 20)

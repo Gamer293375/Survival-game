@@ -112,30 +112,19 @@ class GameView(arcade.View):
             arcade.color.BLACK,
             16,
         )
-
-        arcade.draw_text(
-            f"Food: {emoji.emojize(':red_apple:') * self.player.food_health}",
-            20,
-            50,
-            arcade.color.RED,
-            15
-        )
-
-        arcade.draw_text(
-            f"Water: {emoji.emojize(':droplet:') * self.player.water_health}",
-            20,
-            80,
-            arcade.color.BLUE,
-            15
-        )
-
-        arcade.draw_text(
-            f"Air: {emoji.emojize(':bubbles:') * self.player.air_health}",
-            20,
-            110,
-            arcade.color.WHITE,
-            15
-        )        
+        bar_list = [
+            ("Food:", ':red_apple:', arcade.color.RED, self.player.food_health),
+            ("Water:", ':droplet:', arcade.color.BLUE, self.player.water_health),
+            ("Air:", ':bubbles:', arcade.color.WHITE, self.player.air_health)
+        ]
+        for i in range(len(bar_list)):
+            arcade.draw_text(
+                f"{bar_list[i][0]} {emoji.emojize(bar_list[i][1]) * bar_list[i][3]}",
+                20,
+                50 + i * 30,
+                bar_list[i][2],
+                15
+            )  
 
         if self.equipment_pressed:
             self.draw_equipment_panel()
@@ -179,9 +168,9 @@ class GameView(arcade.View):
 
         start_y = center_y + 35
 
-        for index, text in enumerate(self.player.equipment):
+        for index, (name, amount) in enumerate(self.player.equipment.get_items()):
             arcade.draw_text(
-                f"{text}: {self.player.equipment[text]}",
+                f"{name}: {amount}",
                 center_x - 170,
                 start_y - index * 27,
                 arcade.color.BLACK,
@@ -241,8 +230,14 @@ class GameView(arcade.View):
         elif symbol == arcade.key.S or symbol == arcade.key.DOWN:
             self.down_pressed = True
 
-        if symbol == arcade.key.TAB:
+        elif symbol == arcade.key.TAB:
             self.equipment_pressed = not self.equipment_pressed
+        
+        elif symbol == arcade.key.E:
+            self.player.take_item("food")
+        
+        elif symbol == arcade.key.G:
+            self.player.eat()
 
     def on_key_release(self, symbol, modifiers):
         if symbol == arcade.key.A or symbol == arcade.key.LEFT:
