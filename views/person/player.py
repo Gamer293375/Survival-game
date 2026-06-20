@@ -58,7 +58,7 @@ class Player:
 
     def update_air(self, delta_time): #under water
         self.air_timer += delta_time
-        if self.air_timer >= 20:
+        if self.air_timer >= 5:
             self.air_health -= 1
             self.air_timer = 0
             self.check_game_over()
