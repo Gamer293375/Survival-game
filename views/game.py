@@ -192,6 +192,8 @@ class GameView(arcade.View):
 
         self.physics_engine.update()
 
+        self.player.sprite.update_animation()
+
         self.update_camera()
 
         self.update_animated_layers(delta_time)

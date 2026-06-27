@@ -1,6 +1,7 @@
 import arcade
 
 from .equipment import Equipment
+from .player_sprite import PlayerSprite
 
 class Player:
 
@@ -8,16 +9,18 @@ class Player:
 
         self.speed = speed
 
-        self.sprite = arcade.SpriteSolidColor(
-            width=16,
-            height=16,
-            color=arcade.color.BLUE,
+        self.sprite = PlayerSprite(
+            sprite_sheet_path="assets/player/player.png",
+            frame_width=48,
+            frame_height=48,
+            frames_per_direction=6,
+            scale=1,
         )
 
         self.sprite.center_x = x
         self.sprite.center_y = y
 
-        self.food_health = 2
+        self.food_health = 5
         self.water_health = 5
 
         self.air_health = 5
@@ -28,7 +31,6 @@ class Player:
         self.air_timer = 0
 
         self.equipment = Equipment()
-
 
     def move(self, left, right, up, down):
         self.sprite.change_x = 0
