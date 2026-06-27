@@ -7,16 +7,15 @@ from config import (
 )
 
 class Enemy:
-    def __init__(self, health, damage):
+    def __init__(self, damage):
         self.speed = 1
 
-        self.health = health
+        self.health = random.choice([3, 5])
 
         self.damage_to_player = damage
 
-        self.center_x = random
-        self.center_y = random
-        self.change_x #к игроку
+        self.center_x = random.randint()
+        self.center_y = random.randint()
 
         self.cur_texture = 0
 
@@ -39,7 +38,6 @@ class Enemy:
             self.dead_time += 1
             return
         
-        self.center_x += self.change_x
 
     def update_animation(self, delta_time = 1 / 60):
         if self.state == "dead":
@@ -53,7 +51,7 @@ class Enemy:
             if self.attack_time == 10:
                 self.state = "walk"
                 self.attack_time = 0
-            self.texture = self.special_textures[][]
+            self.texture = self.special_textures
             return
 
         else:
@@ -70,3 +68,6 @@ class Enemy:
         if self.health <= 0:
             self.state = "dead"
             self.health = 0
+
+    def check_attack(self, player_x: int, player_y: int) -> bool:
+        pass
