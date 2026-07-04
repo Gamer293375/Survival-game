@@ -7,9 +7,10 @@ from config import (
 )
 
 class Enemy:
-    APPLE = ""
-    WATER = ""
-    AIR = ""
+    APPLE = ":red_apple:"
+    WATER = ":droplet:"
+    BRONZE_SWORD = "bronze_sword"
+    GOLD_SWORD = "gold_sword"
 
     def __init__(self):
         self.speed = 1
@@ -22,6 +23,12 @@ class Enemy:
         self.center_y = random.randint()
 
         self.scale = TILE_SCALE
+
+        self.object = self.APPLE
+
+        self.range = []
+
+        self.need_sword = self.BRONZE_SWORD
 
     def take_damage(self):
         self.health -= 1
@@ -38,19 +45,19 @@ class Enemy:
         if self.center_x in player_coords and self.center_y in player_coords:
             return True
         
-    def object_after_dead(self, object: str): #тот объект, в который превращается враг после смерти (например яблоко или кусок мяса)
+    def object_after_dead(self): #тот объект, в который превращается враг после смерти (например яблоко или кусок мяса)
         pass
 
     def move(self): #движение врага (двигаться навстречу игроку, если он находится в определенном диапозоне)
-        if self.check_range:
+        if self.check_range():
             pass
 
-    def check_range(self, player_x: int, range: list) -> bool: #проверка на то, что игрок находится в диапозоне видимости врага
-        if player_x in range:
+    def check_range(self, player_x: int) -> bool: #проверка на то, что игрок находится в диапозоне видимости врага
+        if player_x in self.range:
             return True
     
-    def check_player_sword(self, need_sword: str, player_sword: str) -> bool: #проверка на то, что меч игрока подходит для атаки
-        if player_sword == need_sword:
+    def check_player_sword(self, player_sword: str) -> bool: #проверка на то, что меч игрока подходит для атаки
+        if player_sword == self.need_sword:
             return True
         
     
@@ -58,7 +65,32 @@ class EasyEnemy(Enemy):
     def __init__(self):
         super().__init__()
 
+
+class HardEnemy(Enemy):
+    def __init__(self):
+        super().__init__()
+
         self.health += 2
 
         self.damage_to_player += 2
 
+        self.object *= 2
+
+        self.range = [self.range[0] * 1.5, self.range[1] * 1.5]
+
+
+class Boss(Enemy):
+    def __init__(self):
+        super().__init__()
+
+        self.speed *= 2
+
+        self.health += 7
+
+        self.damage_to_player += 3
+
+        self.object = "" #кусок карты
+
+        self.range = [self.range[0] * 2, self.range[1] * 2]
+
+        self.need_sword = self.GOLD_SWORD
