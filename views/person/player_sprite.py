@@ -97,26 +97,14 @@ class PlayerSprite(arcade.Sprite):
 
         # Для движения влево берём кадры движения вправо
         # и отражаем их по горизонтали.
-        self.animation_textures[self.LEFT] = list(
-            map(
-                lambda texture: texture.flip_left_right(),
-                self.animation_textures[self.LEFT]
-            )
-        )
 
-        self.animation_textures[self.STAY_LEFT] = list(
-            map(
-                lambda texture: texture.flip_left_right(),
-                self.animation_textures[self.STAY_LEFT]
+        for key in [self.LEFT, self.STAY_LEFT, self.ATTACK_LEFT]:
+            self.animation_textures[key] = list(
+                map(
+                    lambda texture: texture.flip_left_right(),
+                    self.animation_textures[key]
+                )
             )
-        )
-
-        self.animation_textures[self.ATTACK_LEFT] = list(
-            map(
-                lambda texture: texture.flip_left_right(),
-                self.animation_textures[self.ATTACK_LEFT]
-            )
-        )
 
         # Первый кадр движения вниз ставим как начальную картинку игрока.
         start_texture = self.animation_textures[self.STAY_DOWN][0]
