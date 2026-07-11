@@ -106,6 +106,22 @@ class PlayerSprite(arcade.Sprite):
                 )
             )
 
+
+        self.animation_on_stay = {
+            self.DOWN: self.STAY_DOWN,
+            self.RIGHT: self.STAY_RIGHT,
+            self.LEFT: self.STAY_LEFT,
+            self.UP: self.STAY_UP,
+        }
+
+        self.attack_animation = [
+            [self.DOWN, self.STAY_DOWN, self.ATTACK_DOWN],
+            [self.LEFT, self.STAY_LEFT, self.ATTACK_LEFT],
+            [self.RIGHT, self.STAY_RIGHT, self.ATTACK_RIGHT],
+            [self.UP, self.STAY_UP, self.ATTACK_UP],
+        ]
+
+
         # Первый кадр движения вниз ставим как начальную картинку игрока.
         start_texture = self.animation_textures[self.STAY_DOWN][0]
 
@@ -164,37 +180,14 @@ class PlayerSprite(arcade.Sprite):
         elif self.change_y < 0:
             self.direction = self.DOWN
 
-        elif self.change_x == 0 and self.change_y == 0 and self.direction == self.DOWN:
-            self.direction = self.STAY_DOWN
+        elif self.change_x == 0 and self.change_y == 0 and self.direction not in self.animation_on_stay.values():
+            self.direction = self.animation_on_stay[self.direction]
 
-        elif self.change_x == 0 and self.change_y == 0 and self.direction == self.RIGHT:
-            self.direction = self.STAY_RIGHT
-
-        elif self.change_x == 0 and self.change_y == 0 and self.direction == self.LEFT:
-            self.direction = self.STAY_LEFT
-
-        elif self.change_x == 0 and self.change_y == 0 and self.direction == self.UP:
-            self.direction = self.STAY_UP
-            
-        if (self.direction == self.DOWN or self.direction == self.STAY_DOWN) and self.state == self.ATTACK:
-            self.frames_per_direction = 4
-            self.frame_duration = 0.06
-            self.direction = self.ATTACK_DOWN
-
-        if (self.direction == self.LEFT or self.direction == self.STAY_LEFT) and self.state == self.ATTACK:
-            self.frames_per_direction = 4
-            self.frame_duration = 0.06
-            self.direction = self.ATTACK_LEFT
-
-        if (self.direction == self.RIGHT or self.direction == self.STAY_RIGHT) and self.state == self.ATTACK:
-            self.frames_per_direction = 4
-            self.frame_duration = 0.06
-            self.direction = self.ATTACK_RIGHT
-
-        if (self.direction == self.UP or self.direction == self.STAY_UP) and self.state == self.ATTACK:
-            self.frames_per_direction = 4
-            self.frame_duration = 0.06
-            self.direction = self.ATTACK_UP
+        for dir in self.attack_animation:
+            if (self.direction in (dir[0], dir[1])) and self.state == self.ATTACK:
+                self.frames_per_direction = 4
+                self.frame_duration = 0.06
+                self.direction = dir[2]
 
     def update_animation(self, delta_time=1 / 60):
         # Сначала обновляем направление игрока.
@@ -221,10 +214,10 @@ class PlayerSprite(arcade.Sprite):
             self.frames_per_direction = FRAMES_PER_DIRECTION
             self.frame_duration = 0.12
             if self.direction == self.ATTACK_DOWN:
-                self.direction == self.STAY_DOWN
+                self.direction = self.STAY_DOWN
             elif self.direction == self.ATTACK_LEFT:
-                self.direction == self.STAY_LEFT
+                self.direction = self.STAY_LEFT
             elif self.direction == self.ATTACK_RIGHT:
-                self.direction == self.STAY_RIGHT
+                self.direction = self.STAY_RIGHT
             elif self.direction == self.ATTACK_UP:
-                self.direction == self.STAY_UP
+                self.direction = self.STAY_UP
