@@ -180,7 +180,7 @@ class PlayerSprite(arcade.Sprite):
         elif self.change_y < 0:
             self.direction = self.DOWN
 
-        elif self.change_x == 0 and self.change_y == 0 and self.direction not in self.animation_on_stay.values():
+        elif self.change_x == 0 and self.change_y == 0 and self.direction in self.animation_on_stay.keys():
             self.direction = self.animation_on_stay[self.direction]
 
         for dir in self.attack_animation:
