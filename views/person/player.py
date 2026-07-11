@@ -4,6 +4,8 @@ from .equipment import Equipment
 from .player_sprite import PlayerSprite
 
 class Player:
+    ATTACK = "attack"
+    NOT_ATTACK = "not_attack"
 
     def __init__(self, x, y, speed):
 
@@ -91,3 +93,12 @@ class Player:
         self.equipment.add_item(item_name, amount)
 
         print(f"вы подняли {item_name} - {amount}")
+
+    def take_damage(self):
+        pass
+
+    def attack(self):
+        self.sprite.state = self.ATTACK
+
+    def not_attack(self):
+        self.sprite.state = self.NOT_ATTACK

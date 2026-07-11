@@ -34,6 +34,7 @@ class GameView(arcade.View):
         self.right_pressed = False
         self.up_pressed = False
         self.down_pressed = False
+        self.attack = False
 
         self.map_layers = [
             "Ground",
@@ -193,6 +194,10 @@ class GameView(arcade.View):
         self.physics_engine.update()
 
         self.player.sprite.update_animation()
+        
+        self.player.update_food_and_water(delta_time)
+
+        self.player.update_air(delta_time)
 
         self.update_camera()
 
@@ -241,6 +246,9 @@ class GameView(arcade.View):
         elif symbol == arcade.key.G:
             self.player.eat()
 
+        elif symbol == arcade.key.SPACE:
+            self.player.attack()
+
     def on_key_release(self, symbol, modifiers):
         if symbol == arcade.key.A or symbol == arcade.key.LEFT:
             self.left_pressed = False
@@ -253,3 +261,6 @@ class GameView(arcade.View):
 
         elif symbol == arcade.key.S or symbol == arcade.key.DOWN:
             self.down_pressed = False
+
+        elif symbol == arcade.key.SPACE:
+            self.player.not_attack()

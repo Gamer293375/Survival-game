@@ -1,5 +1,7 @@
 import arcade
-
+from config import (
+    FRAMES_PER_DIRECTION
+)
 
 class PlayerSprite(arcade.Sprite):
     # Возможные направления, куда смотрит игрок.
@@ -7,6 +9,17 @@ class PlayerSprite(arcade.Sprite):
     LEFT = "left"
     RIGHT = "right"
     UP = "up"
+    STAY_DOWN = "stay_down"
+    STAY_LEFT = "stay_left"
+    STAY_RIGHT = "stay_right"
+    STAY_UP = "stay_up"
+    ATTACK_DOWN = "attack_down"
+    ATTACK_LEFT = "attack_left"
+    ATTACK_RIGHT = "attack_right"
+    ATTACK_UP = "attack_up"
+
+    ATTACK = "attack"
+    NOT_ATTACK = "not_attack"
 
     def __init__(
         self,
@@ -45,6 +58,14 @@ class PlayerSprite(arcade.Sprite):
             self.LEFT: [],
             self.RIGHT: [],
             self.UP: [],
+            self.STAY_DOWN: [],
+            self.STAY_LEFT: [],
+            self.STAY_RIGHT: [],
+            self.STAY_UP: [],
+            self.ATTACK_DOWN: [],
+            self.ATTACK_LEFT: [],
+            self.ATTACK_RIGHT: [],
+            self.ATTACK_UP: [],
         }
 
         # Здесь указываем, в каких строках картинки лежат нужные кадры.
@@ -61,6 +82,14 @@ class PlayerSprite(arcade.Sprite):
             self.LEFT: 4,
             self.RIGHT: 4,
             self.UP: 5,
+            self.STAY_DOWN: 0,
+            self.STAY_LEFT: 1,
+            self.STAY_RIGHT: 1,
+            self.STAY_UP: 2,
+            self.ATTACK_DOWN: 6,
+            self.ATTACK_LEFT: 7,
+            self.ATTACK_RIGHT: 7,
+            self.ATTACK_UP: 8,
         }
 
         # Вырезаем кадры из общей картинки.
@@ -75,14 +104,30 @@ class PlayerSprite(arcade.Sprite):
             )
         )
 
+        self.animation_textures[self.STAY_LEFT] = list(
+            map(
+                lambda texture: texture.flip_left_right(),
+                self.animation_textures[self.STAY_LEFT]
+            )
+        )
+
+        self.animation_textures[self.ATTACK_LEFT] = list(
+            map(
+                lambda texture: texture.flip_left_right(),
+                self.animation_textures[self.ATTACK_LEFT]
+            )
+        )
+
         # Первый кадр движения вниз ставим как начальную картинку игрока.
-        start_texture = self.animation_textures[self.DOWN][0]
+        start_texture = self.animation_textures[self.STAY_DOWN][0]
 
         # Передаём начальную картинку в arcade.Sprite.
         super().__init__(
             start_texture,
             scale=scale,
         )
+
+        self.state = self.NOT_ATTACK
 
     def load_animation_textures(self):
         # Загружаем общую картинку со всеми кадрами.
@@ -131,23 +176,41 @@ class PlayerSprite(arcade.Sprite):
         elif self.change_y < 0:
             self.direction = self.DOWN
 
+        elif self.change_x == 0 and self.change_y == 0 and self.direction == self.DOWN:
+            self.direction = self.STAY_DOWN
+
+        elif self.change_x == 0 and self.change_y == 0 and self.direction == self.RIGHT:
+            self.direction = self.STAY_RIGHT
+
+        elif self.change_x == 0 and self.change_y == 0 and self.direction == self.LEFT:
+            self.direction = self.STAY_LEFT
+
+        elif self.change_x == 0 and self.change_y == 0 and self.direction == self.UP:
+            self.direction = self.STAY_UP
+            
+        if (self.direction == self.DOWN or self.direction == self.STAY_DOWN) and self.state == self.ATTACK:
+            self.frames_per_direction = 4
+            self.frame_duration = 0.06
+            self.direction = self.ATTACK_DOWN
+
+        if (self.direction == self.LEFT or self.direction == self.STAY_LEFT) and self.state == self.ATTACK:
+            self.frames_per_direction = 4
+            self.frame_duration = 0.06
+            self.direction = self.ATTACK_LEFT
+
+        if (self.direction == self.RIGHT or self.direction == self.STAY_RIGHT) and self.state == self.ATTACK:
+            self.frames_per_direction = 4
+            self.frame_duration = 0.06
+            self.direction = self.ATTACK_RIGHT
+
+        if (self.direction == self.UP or self.direction == self.STAY_UP) and self.state == self.ATTACK:
+            self.frames_per_direction = 4
+            self.frame_duration = 0.06
+            self.direction = self.ATTACK_UP
+
     def update_animation(self, delta_time=1 / 60):
         # Сначала обновляем направление игрока.
         self.update_direction()
-
-        # Проверяем, двигается ли игрок.
-        is_moving = (
-            self.change_x != 0
-            or self.change_y != 0
-        )
-
-        # Если игрок стоит на месте,
-        # показываем первый кадр текущего направления.
-        if not is_moving:
-            self.current_frame = 0
-            self.animation_timer = 0.0
-            self.texture = self.animation_textures[self.direction][0]
-            return
 
         # Если игрок двигается, увеличиваем таймер.
         self.animation_timer += delta_time
@@ -165,3 +228,15 @@ class PlayerSprite(arcade.Sprite):
         # Ставим игроку нужную картинку:
         # берём направление и номер текущего кадра.
         self.texture = self.animation_textures[self.direction][self.current_frame]
+
+        if self.state == self.NOT_ATTACK:
+            self.frames_per_direction = FRAMES_PER_DIRECTION
+            self.frame_duration = 0.12
+            if self.direction == self.ATTACK_DOWN:
+                self.direction == self.STAY_DOWN
+            elif self.direction == self.ATTACK_LEFT:
+                self.direction == self.STAY_LEFT
+            elif self.direction == self.ATTACK_RIGHT:
+                self.direction == self.STAY_RIGHT
+            elif self.direction == self.ATTACK_UP:
+                self.direction == self.STAY_UP
