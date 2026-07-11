@@ -182,12 +182,15 @@ class PlayerSprite(arcade.Sprite):
 
         elif self.change_x == 0 and self.change_y == 0 and self.direction in self.animation_on_stay.keys():
             self.direction = self.animation_on_stay[self.direction]
-
-        for dir in self.attack_animation:
-            if (self.direction in (dir[0], dir[1])) and self.state == self.ATTACK:
-                self.frames_per_direction = 4
-                self.frame_duration = 0.06
-                self.direction = dir[2]
+            
+        else:
+            for dir in self.attack_animation:
+                if (self.direction in (dir[0], dir[1])) and self.state == self.ATTACK:
+                    self.frames_per_direction = 4
+                    self.frame_duration = 0.08
+                    self.animation_timer = 0
+                    self.current_frame = 0
+                    self.direction = dir[2]
 
     def update_animation(self, delta_time=1 / 60):
         # Сначала обновляем направление игрока.
@@ -205,6 +208,11 @@ class PlayerSprite(arcade.Sprite):
             # Если кадры закончились, начинаем снова с первого.
             if self.current_frame >= self.frames_per_direction:
                 self.current_frame = 0
+                if self.frames_per_direction == 4:
+                    self.state = self.NOT_ATTACK
+                
+        if self.frames_per_direction == 4:
+            print(self.current_frame)
 
         # Ставим игроку нужную картинку:
         # берём направление и номер текущего кадра.

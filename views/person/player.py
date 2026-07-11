@@ -99,6 +99,3 @@ class Player:
 
     def attack(self):
         self.sprite.state = self.ATTACK
-
-    def not_attack(self):
-        self.sprite.state = self.NOT_ATTACK

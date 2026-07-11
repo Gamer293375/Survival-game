@@ -261,6 +261,3 @@ class GameView(arcade.View):
 
         elif symbol == arcade.key.S or symbol == arcade.key.DOWN:
             self.down_pressed = False
-
-        elif symbol == arcade.key.SPACE:
-            self.player.not_attack()
